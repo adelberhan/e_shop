@@ -97,8 +97,8 @@ router.post('/create-checkout-session', async (req, res) => {
         payment_method_types: ['card'],
         line_items: lineItems,
         mode: 'payment',
-        success_url: 'https://cool-sawine-3939bd.netlify.app/success',
-        cancel_url: 'https://cool-sawine-3939bd.netlify.app/error',
+        success_url: 'https://my-ng-shop.netlify.app/success',
+        cancel_url: 'https://my-ng-shop.netlify.app/error',
     }),
         res.json({
             id: session.id,
