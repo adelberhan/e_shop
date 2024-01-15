@@ -10,24 +10,12 @@ function authJwt() {
     isRevoked: isRevoked,
   }).unless({
     path: [
-<<<<<<< HEAD
+ 
       { url: /\/api\/v1\/products(.*)/, methods: ["GET", "OPTIONS"] },
-      // { url: /\/api\/v1\/products(.*)/, methods: ["GET", "OPTIONS"] },
-      { url: /\/api\/v1\/orders(.*)/, methods: ["POST", "GET", "PUT", "DELETE"] },
-      { url: /\/public\/uploads(.*)/, methods: ["GET", "OPTIONS"] },
       { url: /\/api\/v1\/categories(.*)/, methods: ["GET", "OPTIONS", "PUT"] },
-=======
-      // { url: /\/api\/v1\/products(.*)/, methods: ["GET", "OPTIONS"] },
-      // { url: /\/api\/v1\/orders(.*)/, methods: ["POST"] },
-      // { url: /\/public\/uploads(.*)/, methods: ["GET", "OPTIONS"] },
-      // { url: /\/api\/v1\/categories(.*)/, methods: ["GET", "OPTIONS"] },
-      // `${api}/users/login`,
-      // `${api}/users/register`,
-      // { url: /\/api\/v1\/products(.*)/, methods: ["GET","PUT", "OPTIONS"] },
       { url: /\/api\/v1\/orders(.*)/, methods: ["POST", "GET", "PUT", "DELETE"] },
       { url: /\/public\/uploads(.*)/, methods: ["GET", "OPTIONS"] },
-      // { url: /\/api\/v1\/categories(.*)/, methods: ["GET", "OPTIONS", "PUT"] },
->>>>>>> dca86f9028c010e5603fb39370e4ff1ac698a28a
+ 
       `${api}/users/login`,
       `${api}/users/register`,
     ],
