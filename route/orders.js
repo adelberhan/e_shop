@@ -98,18 +98,22 @@ router.post("/create-checkout-session", async (req, res) => {
         },
         quantity: orderItem.quantity,
       };
-    }),
+    })
   );
-  ((session = await stripe.checkout.sessions.create({
+
+  const baseUrl = process.env.CLIENT_URL;
+
+  const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: "https://my-ng-shop.netlify.app/success",
-    cancel_url: "https://my-ng-shop.netlify.app/error",
-  })),
-    res.json({
-      id: session.id,
-    }));
+    success_url: `${baseUrl}/success`,
+    cancel_url: `${baseUrl}/error`,
+  });
+
+  res.json({
+    id: session.id,
+  });
 });
 
 //////Update a order//////
