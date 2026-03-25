@@ -11,7 +11,12 @@ const authJwt = require("./helpers/jwt");
 const errorHandler = require("./helpers/errors-handler");
 
 ///////////// CORS /////////////
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
 app.options("*", cors());
 
 /////////////Middleware/////////////
